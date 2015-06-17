@@ -21,7 +21,9 @@ class login extends CI_Controller {
 				if($result !=0){
 					//cek previlege
 					if($result['PREV'] == 'A'){
-						$this->load->view('admin_view', $result);
+						session_start();
+						$_SESSION['username'] = $result['USERNAME'];
+						redirect('admin/home_admin');
 					}
 					else{
 						echo "manager";

@@ -25,6 +25,7 @@
 		    		'ID_USERS' => $result[0]['ID_USERS'],
 		    		'PREV' => $result[0]['PREV']
 		    	);
+		    	session_start();
 		    	return $data;
 			}
 			else {
