@@ -1,32 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<meta charset="utf-8">
-		<title>Login Form</title>
-		<meta name="generator" content="Bootply" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<link href="<?=base_url()?>assets/css/bootstrap.min.css" rel="stylesheet">
-		<link href="<?=base_url()?>assets/css/styles.css" rel="stylesheet">
-	</head>
-	<body>
-<div id="login">
-  <div id="triangle"></div>
-  <h1>Log in</h1>
-  <form method="post" action="<?php echo site_url('login/do_login') ?>">
-    <input type="text" class="teks" name="username" placeholder="Username" value="<?php echo set_value('username');?>"/>
-    <div class="kotak"><?php echo form_error('username'); ?></div>
-    <input type="password" name="password" placeholder="Password" value="<?php echo set_value('password');?>"/>
-    <div class="kotak"><?php echo form_error('password')?></div>
-    <input type="submit" value="Log in" />
-  </form>
-</div>
-      
-  </div>
-  </div>
-</div>
-	<!-- script references -->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-		<script src="<?=base_url()?>assets/js/bootstrap.min.js"></script>
-	</body>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <link href="<?=base_url()?>assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?=base_url()?>assets/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    <link href="<?=base_url()?>assets/css/sb-admin-2.css" rel="stylesheet">
+    <link href="<?=base_url()?>assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-4 col-md-offset-4">
+                <img src="logo.png" alt="logo" style="width:258px;height:128px;">
+                <div class="login-panel panel panel-red">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Sign In</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form" method="post" action="<?php echo site_url('login/do_login') ?>">
+                            <fieldset>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Username" name="username" type="username" value="<?php echo set_value('username');?>"/>
+                                </div>
+                                <div class="kotak"><?php echo form_error('username'); ?></div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Password" name="password" type="password" value="<?php echo set_value('password');?>"/>
+                                </div>
+                                <div class="kotak"><?php echo form_error('password')?></div>
+                               
+                                <input type="submit" value="Log in" />
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="<?=base_url()?>assets/jquery/dist/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="<?=base_url()?>assets/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="<?=base_url()?>assets/metisMenu/dist/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="<?=base_url()?>assets/js/sb-admin-2.js"></script>
+
+</body>
+
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
