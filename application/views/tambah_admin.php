@@ -38,14 +38,14 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-10">
-                                    <form role="form" method="post" action="<?php echo site_url('admin/tambah') ?>">
+                                    <form role="form" method="post" action="<?php echo site_url('admin/insert') ?>">
                                         <div class="form-group">
                                             <label>Username</label>
                                             <input class="form-control" name="username" placeholder="Username" value="<?php echo set_value('username');?>">
                                         </div>
                                         <div class="form-group">
                                             <label>Password</label>
-                                            <input class="form-control" name="password" placeholder="Password" value="<?php echo set_value('password');?>">
+                                            <input class="form-control" type="password" name="password" placeholder="Password" value="<?php echo set_value('password');?>">
                                         </div>
                                         <button type="submit" class="btn btn-default">Submit</button>
                                     </form>
