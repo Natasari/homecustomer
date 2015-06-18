@@ -15,7 +15,6 @@
 
 		public function insert_user($username,$password) {
 				$this->load->database(); 
-<<<<<<< HEAD
 				$result = $this->db->query("INSERT INTO USERS (USERS.USERNaME, USERS.PASS, USERS.PREV) VALUES ('$username','$password', 'A')");
 				return $result;
 		}
@@ -32,10 +31,6 @@
 			if(count($query) > 0){
 				return 1;
 			}
-=======
-				$result = $this->db->query("INSERT INTO USERS (USERS.USERNAME, USERS.PASS) VALUES ('$username','$password')");
-				//print_r($result);
->>>>>>> 9f97c9d5acc68ad6603987406a759b6292f8c611
 		}
 	}
 

@@ -1,11 +1,9 @@
 <?php
 class admin extends CI_Controller {
-<<<<<<< HEAD
-	public function index(){
-=======
+
 	public function index()
 	{
->>>>>>> 9f97c9d5acc68ad6603987406a759b6292f8c611
+
 	}
 
 	public function home_admin(){
@@ -55,7 +53,6 @@ class admin extends CI_Controller {
 				//echo $username;
 				//echo $password;
 				$this->load->model('admin_model');
-<<<<<<< HEAD
 				$cek = $this->admin_model->cekuser($username);
 				if($cek == 1){
 					echo '<script>alert("Please use another username");</script>';
@@ -70,9 +67,8 @@ class admin extends CI_Controller {
 						echo '<script>alert("New admin success added");</script>';
 					}
 				}
-=======
 				$result = $this->admin_model->insert_user($username, $password);
->>>>>>> 9f97c9d5acc68ad6603987406a759b6292f8c611
+
 			}
 			else{
 					$this->load->view('tambah_admin');
@@ -84,22 +80,14 @@ class admin extends CI_Controller {
 			}	
 	}
 	public function logout()
-	{	/*session_start();
-		session_unset();
-		session_destroy();
-		$this->load->view('login_view');
-		*/
-		//redirect('login_view');
-
+	{	
 		session_start();
-		//echo $_SESSION['username'];
-		//session_unset();
+		
 		unset($_SESSION['username']);
 		session_destroy();
 		//if no session variable then redirect the user
 		if (!isset($_SESSION['username'])) {
 			redirect('login');
-			//$this->load->view('login_view');
 			exit();
 		}
 		else{ //cancel the session
@@ -107,9 +95,48 @@ class admin extends CI_Controller {
 			session_destroy(); // Destroy the session
 			setcookie('PHPSESSID', ", time()-3600,'/', ", 0, 0);//Destroy the cookies
 			redirect('login');
-			//$this->load->view('login_view');
 			exit();	
 			}
+	}
+
+	public function profile(){
+		session_start();
+		$this->load->view('profile');
+	}
+	public function denah_cluster(){
+		session_start();
+		$this->load->view('denah_klaster');
+	}
+	public function data_teknik(){
+		session_start();
+		$this->load->view('data_teknik');
+	}
+	public function pelanggan_eksisting(){
+		session_start();
+		$this->load->view('pelanggan_eksisting');
+	}
+	public function revenue_per_bulan(){
+		session_start();
+		$this->load->view('revenue_per_bulan');
+	}
+	public function rekap_revenue(){
+		session_start();
+		$this->load->view('rekap_revenue');
+	}
+	public function search(){
+		if(isset($_GET['term']))
+		{
+			$this->load->model('admin_model');
+			$result = $this->admin_model->search(strtolower($_GET['term']));
+			foreach ($result as $key => $value) {
+			    $baca[] = $value->USERNAME;
+			}
+			echo json_encode($baca);
+		}
+		else{
+			echo "ga ada";
+		}
+		
 	}
 }
 ?>
