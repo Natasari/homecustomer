@@ -5,16 +5,17 @@
 		{
 			parent::__construct();
 		}
-		//model USERS
-		public function list_user($username) 
+		public function list_user() 
 		{
 			$this->load->database(); 
-			$show = $this->db->query("SELECT USERS.USERNAME FROM USERS ASC");
-			$result = $show->result_array();
+			$show = $this->db->query("SELECT USERS.USERNAME, USERS.PREV FROM USERS");
+			$result = $show->result();
+			return $result;
 		}
 
 		public function insert_user($username,$password) {
 				$this->load->database(); 
+<<<<<<< HEAD
 				$result = $this->db->query("INSERT INTO USERS (USERS.USERNaME, USERS.PASS, USERS.PREV) VALUES ('$username','$password', 'A')");
 				return $result;
 		}
@@ -31,6 +32,10 @@
 			if(count($query) > 0){
 				return 1;
 			}
+=======
+				$result = $this->db->query("INSERT INTO USERS (USERS.USERNAME, USERS.PASS) VALUES ('$username','$password')");
+				//print_r($result);
+>>>>>>> 9f97c9d5acc68ad6603987406a759b6292f8c611
 		}
 	}
 

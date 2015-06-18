@@ -1,6 +1,11 @@
 <?php
 class admin extends CI_Controller {
+<<<<<<< HEAD
 	public function index(){
+=======
+	public function index()
+	{
+>>>>>>> 9f97c9d5acc68ad6603987406a759b6292f8c611
 	}
 
 	public function home_admin(){
@@ -12,7 +17,6 @@ class admin extends CI_Controller {
 		else
 		$this->load->view('home_admin');
 	}
-
 	public function manage_admin(){
 		session_start();
 		if (!isset($_SESSION['username'])) {
@@ -20,56 +24,76 @@ class admin extends CI_Controller {
 			exit();
 		}
 		else
-		$this->load->view('manage_admin');
+		{	$this->load->model('admin_model');
+			$result = $data['listuser'] = $this->admin_model->list_user();
+			$this->load->view('manage_admin', $data, $result);		
+		}
 	}
-	
-	public function profile(){
+	public function tambah(){
 		session_start();
-		$this->load->view('profile');
+		if (!isset($_SESSION['username'])) {
+			redirect('login');
+			//$this->load->view('login_view');
+			exit();
+		}
+		else
+		$this->load->view('tambah_admin');
+
 	}
-	
-	public function denah_cluster(){
+	public function insert()
+	{
 		session_start();
-		$this->load->view('denah_klaster');
-	}
-	
-	public function data_teknik(){
-		session_start();
-		$this->load->view('data_teknik');
-	}
-	
-	public function pelanggan_eksisting(){
-		session_start();
-		$this->load->view('pelanggan_eksisting');
-	}
-	
-	public function revenue_per_bulan(){
-		session_start();
-		$this->load->view('revenue_per_bulan');
-	}
-	
-	public function rekap_revenue(){
-		session_start();
-		$this->load->view('rekap_revenue');
-	}
-	
-	public function search(){
-		if(isset($_GET['term']))
+		if($_SERVER['REQUEST_METHOD']== 'POST')
 		{
-			$this->load->model('admin_model');
-			$result = $this->admin_model->search(strtolower($_GET['term']));
-			foreach ($result as $key => $value) {
-			    $baca[] = $value->USERNAME;
+			$this->form_validation->set_rules('username','Username','required');
+			$this->form_validation->set_rules('password', 'Password', 'required');
+			$this->form_validation->set_message('required', '%s must be filled');
+			if($this->form_validation->run() == TRUE)
+			{
+				$username = $this->input->post('username');
+				$password = $this->input->post('password');
+				//echo $username;
+				//echo $password;
+				$this->load->model('admin_model');
+<<<<<<< HEAD
+				$cek = $this->admin_model->cekuser($username);
+				if($cek == 1){
+					echo '<script>alert("Please use another username");</script>';
+					$this->load->view('tambah_admin');
+				}
+				else{
+					$this->load->model('admin_model');
+					$hash = password_hash($password, PASSWORD_DEFAULT);
+					
+					$result = $this->admin_model->insert_user($username, $hash);
+					if($result == 1){
+						echo '<script>alert("New admin success added");</script>';
+					}
+				}
+=======
+				$result = $this->admin_model->insert_user($username, $password);
+>>>>>>> 9f97c9d5acc68ad6603987406a759b6292f8c611
 			}
-			echo json_encode($baca);
+			else{
+					$this->load->view('tambah_admin');
+					echo '<script>alert("username and password must be filled");</script>'; 
+				}
 		}
 		else{
-			echo "ga ada";
-		}
+				$this->load->view('tambah_admin');
+			}	
 	}
-	
-	public function logout(){	
+	public function logout()
+	{	/*session_start();
+		session_unset();
+		session_destroy();
+		$this->load->view('login_view');
+		*/
+		//redirect('login_view');
+
 		session_start();
+		//echo $_SESSION['username'];
+		//session_unset();
 		unset($_SESSION['username']);
 		session_destroy();
 		//if no session variable then redirect the user
@@ -86,58 +110,6 @@ class admin extends CI_Controller {
 			//$this->load->view('login_view');
 			exit();	
 			}
-	}
-
-	//USERS MODEL
-	public function tambah(){
-		session_start();
-		if (!isset($_SESSION['username'])) {
-			redirect('login');
-			exit();
-		}
-		else{
-			$this->load->view('tambah_admin');
-		}
-	}
-
-	public function insert()
-	{
-		session_start();
-		if($_SERVER['REQUEST_METHOD']== 'POST')
-		{
-			$this->form_validation->set_rules('username','Username','required');
-			$this->form_validation->set_rules('password', 'Password', 'required');
-			$this->form_validation->set_message('required', '%s must be filled');
-			if($this->form_validation->run() == TRUE)
-			{
-				$username = $this->input->post('username');
-				$password = $this->input->post('password');
-				
-				//to check username wasn't use before
-				$this->load->model('admin_model');
-				$cek = $this->admin_model->cekuser($username);
-				if($cek == 1){
-					echo '<script>alert("Please use another username");</script>';
-					$this->load->view('tambah_admin');
-				}
-				else{
-					$this->load->model('admin_model');
-					$hash = password_hash($password, PASSWORD_DEFAULT);
-					
-					$result = $this->admin_model->insert_user($username, $hash);
-					if($result == 1){
-						echo '<script>alert("New admin success added");</script>';
-					}
-				}
-			}
-			else{
-					$this->load->view('tambah_admin');
-					echo '<script>alert("username and password must be filled");</script>'; 
-				}
-		}
-		else{
-				$this->load->view('tambah_admin');
-			}	
 	}
 }
 ?>
