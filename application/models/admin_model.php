@@ -32,6 +32,11 @@
 			    return $nothing;
 			}
 		}
+		public function search($name){
+			$this->load->database();
+			$query = $this->db->query("SELECT USERS.USERNAME FROM USERS WHERE USERS.USERNAME LIKE '%{$name}%'");
+			return $query->result();
+		}
 	}
 
 ?>
