@@ -28,7 +28,7 @@
 		public function cekuser($username){
 			$this->load->database();
 			$query = $this->db->query("SELECT USERS.USERNAME FROM USERS WHERE USERS.USERNAME='$username'");
-			if($query > 0){
+			if(count($query) > 0){
 				return 1;
 			}
 		}

@@ -17,7 +17,7 @@
                                     <a href="<?=base_url()?>index.php/admin/profile"
                                         <?php
                                            if(strpos(current_url(), site_url("profile"))!== false){
-                                            echo 'class="active';
+                                            echo 'class="active"';
                                            } 
                                         ?>
                                         >Profile</a>
@@ -26,7 +26,8 @@
                                     <a href="<?=base_url()?>index.php/admin/denah_cluster"
                                         <?php
                                            if(strpos(current_url(), site_url("denah_cluster"))!== false){
-                                            echo 'class="active';
+                                            echo 'class="active"';
+
                                            } 
                                         ?>
                                         >Denah Cluster</a>

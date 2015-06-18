@@ -32,12 +32,12 @@
             <!-- /.row -->
             <div class="row">
                 <div class="col-lg-6">
-                    <div class="panel panel-default">
+                    <div style="width:500px;" class="panel panel-default" >
                         <div class="panel-heading">
                         </div>
                         <div class="panel-body">
                             <div class="row">
-                                <div class="col-lg-10">
+                                <div style="width:100%;" class="col-lg-10">
                                     <form role="form" method="post" action="<?php echo site_url('admin/insert') ?>">
                                         <div class="form-group">
                                             <label>Username</label>
@@ -47,7 +47,7 @@
                                             <label>Password</label>
                                             <input class="form-control" type="password" name="password" placeholder="Password" value="<?php echo set_value('password');?>">
                                         </div>
-                                        <button type="submit" class="btn btn-default">Submit</button>
+                                        <button type="submit" style="float:right;" class="btn btn-default">Submit</button>
                                     </form>
                                 </div>
                                 <!-- /.col-lg-6 (nested) -->

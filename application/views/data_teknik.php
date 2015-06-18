@@ -20,7 +20,6 @@
 <body>
 
     <div id="wrapper">
-    	
         <?php $this->load->view('header_admin')?>
         <?php $this->load->view('sidebar_admin')?>    
         <div id="page-wrapper">

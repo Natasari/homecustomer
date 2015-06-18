@@ -1,14 +1,12 @@
 <?php
 class admin extends CI_Controller {
 	public function index(){
-		$this->load->view('coba');
 	}
 
 	public function home_admin(){
 		session_start();
 		if (!isset($_SESSION['username'])) {
 			redirect('login');
-			//$this->load->view('login_view');
 			exit();
 		}
 		else
@@ -19,7 +17,6 @@ class admin extends CI_Controller {
 		session_start();
 		if (!isset($_SESSION['username'])) {
 			redirect('login');
-			//$this->load->view('login_view');
 			exit();
 		}
 		else
@@ -121,6 +118,7 @@ class admin extends CI_Controller {
 				$cek = $this->admin_model->cekuser($username);
 				if($cek == 1){
 					echo '<script>alert("Please use another username");</script>';
+					$this->load->view('tambah_admin');
 				}
 				else{
 					$this->load->model('admin_model');
