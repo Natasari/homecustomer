@@ -26,6 +26,7 @@ class login extends CI_Controller {
 					else{
 						echo "manager";
 					}
+					//
 				}
 				else{
 					$this->load->view('login_view');
