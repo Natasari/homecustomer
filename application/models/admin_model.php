@@ -5,15 +5,32 @@
 		{
 			parent::__construct();
 		}
+		//model USERS
+		public function list_user($username) 
+		{
+			$this->load->database(); 
+			$show = $this->db->query("SELECT USERS.USERNAME FROM USERS ASC");
+			$result = $show->result_array();
+		}
+
 		public function insert_user($username,$password) {
 				$this->load->database(); 
-				$result = $this->db->query("INSERT INTO USERS (USERS.USERNaME, USERS.PASS) VALUES ('$username','$password')");
-				//print_r($result);
+				$result = $this->db->query("INSERT INTO USERS (USERS.USERNaME, USERS.PASS, USERS.PREV) VALUES ('$username','$password', 'A')");
+				return $result;
 		}
-		public function search($name){
+
+		public function search($username){
 			$this->load->database();
-			$query = $this->db->query("SELECT USERS.USERNAME FROM USERS WHERE USERS.USERNAME LIKE '%{$name}%'");
+			$query = $this->db->query("SELECT USERS.USERNAME FROM USERS WHERE USERS.USERNAME LIKE '%{$username}%'");
 			return $query->result();
+		}
+
+		public function cekuser($username){
+			$this->load->database();
+			$query = $this->db->query("SELECT USERS.USERNAME FROM USERS WHERE USERS.USERNAME='$username'");
+			if($query > 0){
+				return 1;
+			}
 		}
 	}
 

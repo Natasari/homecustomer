@@ -9,9 +9,7 @@ class login extends CI_Controller {
 		if($_SERVER['REQUEST_METHOD']== 'POST'){
 			$this->form_validation->set_rules('username','Username','required');
 			$this->form_validation->set_rules('password', 'Password', 'required');
-
 			$this->form_validation->set_message('required', '%s must be filled');
-
 			if($this->form_validation->run() == TRUE){
 				$username = $this->input->post('username');
 				$password = $this->input->post('password');
@@ -28,7 +26,6 @@ class login extends CI_Controller {
 					else{
 						echo "manager";
 					}
-					//
 				}
 				else{
 					$this->load->view('login_view');
