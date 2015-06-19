@@ -9,32 +9,24 @@
     <meta name="author" content="">
 
     <title>Admin</title>
-    <link href="<?=base_url()?>assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+      <link href="<?=base_url()?>assets/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="<?=base_url()?>assets/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
     <link href="<?=base_url()?>assets/css/timeline.css" rel="stylesheet">
     <link href="<?=base_url()?>assets/css/sb-admin-2.css" rel="stylesheet">
     <link href="<?=base_url()?>assets/morrisjs/morris.css" rel="stylesheet">
-    <link href="<?=base_url()?>assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-</head>
+    <link href="<?=base_url()?>assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"></head>
 
 <body>
-
     <div id="wrapper">
         <?php $this->load->view('header_admin')?>
         <?php $this->load->view('sidebar_admin')?>    
         <div id="page-wrapper">
+             <h2 class="page-header">List User &nbsp&nbsp&nbsp <a href="<?=base_url()?>index.php/admin/tambah"><button type="button" class="btn btn-primary">Add User</button></a></h2>
             <div class="row">
+
+                    
                 <div class="col-lg-12">
-                    <h1 class="page-header">Manage Admin</h1>  <label>
-                                                    <a href="<?=base_url()?>index.php/admin/tambah"><button type="button" class="btn btn-primary">Add User</button></a>
-                                                </label>
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
+                   <div class="panel panel-default">
                         <div class="panel-heading">
                         </div>
                         <!-- /.panel-heading -->
@@ -45,6 +37,7 @@
                                         <tr>
                                             <th>Username</th>
                                             <th>Jabatan</th>
+                                            <th>Blablabla</th>
                                             <th>Blablabla</th>
                                             <th>Edit</th>
                                             <th>Delete</th>
@@ -61,14 +54,16 @@
                                             <tr>
                                                 <td><?php echo $products->USERNAME; ?></td>
                                                 <td><?php echo $products->PREV; ?></td>
-                                                <td><?php echo 'terserah' ?></td>
-                                                <td><button type="button" class="btn btn-warning">Edit</button></td>
-                                                <td><button type="button" class="btn btn-danger">Delete</button></td>
+                                                <td><?php echo 'a' ?></td>
+                                                <td><?php echo 'b' ?></td>
+                                                <td><a href="<?=base_url()?>index.php/admin/edit"><button type="button" class="btn btn-warning">Edit</button></td>
+                                                <td><a href="<?=base_url()?>index.php/admin/delete"><button type="button" class="btn btn-danger">Delete</button></td>
                                             </tr>
                                         <?php
                                         }
                                         ?>
                                         </tr></tbody>
+                                        <?php $id=$products->USERNAME; ?>
                                 </table>
                             <!-- /.table-responsive -->
                         </div>
