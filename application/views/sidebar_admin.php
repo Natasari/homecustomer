@@ -58,7 +58,7 @@
                             <a href="#"><i class="fa fa-files-o fa-fw"></i> Revenue<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
-                                    <a href="<?=base_url()?>index.php/admin/revenue_per_bulan">Revenue @Bulan</a>
+                                    <a href="<?=base_url()?>index.php/admin/revenue_per_bulan">Revenue per Bulan</a>
                                 </li>
                                 <li>
                                     <a href="<?=base_url()?>index.php/admin/rekap_revenue">Rekap Revenue</a>

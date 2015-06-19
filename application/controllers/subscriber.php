@@ -4,7 +4,7 @@ class Subscriber extends CI_Controller {
     function index()
     {
         
-        //$this->load->view('subscriber_view');
+        $this->load->view('tables');
     }
     //function to handle callbacks
     function datatable()

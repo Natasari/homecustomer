@@ -17,23 +17,6 @@
     <link href="<?=base_url()?>assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
 
-    <script src="<?php echo base_url(); ?>assets/js/jquery/jquery-1.7.2.min.js"></script>
-	<script src="<?php echo base_url(); ?>assets/js/jquery/jquery.ui.core.min.js"></script>
-	<script src="<?php echo base_url(); ?>assets/js/jquery/jquery.ui.widget.min.js"></script>
-	<script src="<?php echo base_url(); ?>assets/js/jquery/jquery.ui.position.min.js"></script>
-	<script src="<?php echo base_url(); ?>assets/js/jquery/jquery.ui.autocomplete.min.js"></script>
-	<script src="<?php echo base_url(); ?>assets/metisMenu/dist/metisMenu.min.js"></script>
-    <script src="<?php echo base_url(); ?>assets/js/sb-admin-2.js"></script>
-
-	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/js/jquery/smoothness/jquery-ui-1.8.21.custom.css"/>
-
-    <script type="text/javascript">
-		$(document).ready(function(){
-			$('#search').autocomplete({
-				source: "<?php echo site_url('admin/search?='); ?>"
-			});
-		});
-	</script>
     <style>
         td {
             padding-left: 5px;
@@ -64,7 +47,7 @@
                         
                         <div class="row">
                             <div id="dataTables-example_filter" class="dataTables_filter">
-                                <label style="float:left; margin-right:15px;"> Search Area:  
+                                <label style="float:left; margin-right:15px;"> Cluster :  
                                     <input type="text" id="search" class="form-control input-sm" placeholder="" aria-controls="dataTables-example">
                                 </label>
                             </div>
@@ -197,6 +180,29 @@
 
     </div>
     <!-- /#wrapper -->
+    
+    
+    <script src="<?php echo base_url(); ?>assets/jquery/jquery-2.1.4.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/jquery/jquery-1.7.2.min.js"></script> <!-- autocmplete-->
+    <script src="<?php echo base_url(); ?>assets/js/jquery/jquery.ui.core.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/jquery/jquery.ui.widget.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/jquery/jquery.ui.position.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/jquery/jquery.ui.autocomplete.min.js"></script>
+    <script type="text/javascript">
+        var $jq = jQuery.noConflict(true);
+        $jq(document).ready(function(){
+            $jq('#search').autocomplete({
+                source: "<?php echo site_url('admin/search?='); ?>"
+            });
+        });
+    </script>
+     <!-- -->
+    <script src="<?php echo base_url(); ?>assets/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/js/sb-admin-2.js"></script>
+
+    <link rel="stylesheet" href="<?php echo base_url(); ?>assets/js/jquery/smoothness/jquery-ui-1.8.21.custom.css"/>
+
     
 </body>
 

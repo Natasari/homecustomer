@@ -24,8 +24,11 @@
         <div class="row">
 
             <div class="col-md-4 col-md-offset-4">
-                <img src="<?=base_url()?>assets/image/logo.png" alt="logo" style="width:258px;height:130px;">
+                
+                    <img src="<?=base_url()?>assets/image/logo.png" alt="logo" style="display: block;margin-top:60px;width:60%;margin-left: auto;margin-right: auto;">
+                
                 <div class="login-panel panel panel-red">
+
                     <div class="panel-heading">
                         <h3 class="panel-title">Sign In</h3>
                     </div>
