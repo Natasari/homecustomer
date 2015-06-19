@@ -36,6 +36,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
+                            DataTables Advanced Tables
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -43,20 +44,16 @@
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>Username</th>
-                                            <th>Jabatan</th>
-                                            <th>Blablabla</th>
-                                            <th>Edit</th>
-                                            <th>Delete</th>
+                                            <th>Rendering engine</th>
+                                            <th>Browser</th>
+                                            <th>Platform(s)</th>
+                                            <th>Engine version</th>
+                                            <th>CSS grade</th>
                                         </tr>
                                     </thead>
-                                    <tbody>    
-                                    <tr class="gradeA odd" role="row">
                                     <?php
-
                                         foreach ($listuser as $products)
                                         {
-                                           
                                         ?>
                                             <tr>
                                                 <td><?php echo $products->USERNAME; ?></td>
@@ -70,7 +67,7 @@
                                         ?>
                                         </tr></tbody>
                                 </table>
-                            <!-- /.table-responsive -->
+                            </div>                            
                         </div>
                         <!-- /.panel-body -->
                     </div>
@@ -78,8 +75,8 @@
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
-            <!-- /.row -->
             
+            </div>
         </div>
         <!-- /#page-wrapper -->
 
