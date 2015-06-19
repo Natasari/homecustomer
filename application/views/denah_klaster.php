@@ -15,6 +15,7 @@
     <link href="<?=base_url()?>assets/css/sb-admin-2.css" rel="stylesheet">
 	<link href="<?=base_url()?>assets/morrisjs/morris.css" rel="stylesheet">
     <link href="<?=base_url()?>assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    
 </head>
 
 <body>
@@ -30,29 +31,29 @@
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
+            <div class="panel-body">
+                <div class="dataTable_wrapper">
+                    <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                        
+                        <div class="row">
+                            <div id="dataTables-example_filter" class="dataTables_filter">
+                                <label style="float:left; margin-right:15px;"> Search Area:  
+                                    <input type="text" id="search" class="form-control input-sm" placeholder="" aria-controls="dataTables-example">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Basic Form Elements
-                        </div>
+                        
                         <div class="panel-body">
                             <div class="row">
                                 <div class="col-lg-6">
-                                    <form role="form">
-                                        <div class="form-group">
-                                            <label>Text Input</label>
-                                            <input class="form-control">
-                                            <p class="help-block">Example block-level help text here.</p>
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Text Input with Placeholder</label>
-                                            <input class="form-control" placeholder="Enter text">
-                                        </div>
-                                       
-                                        <button type="submit" class="btn btn-default">Submit Button</button>
-                                        <button type="reset" class="btn btn-default">Reset Button</button>
-                                    </form>
+                                    IMAGE
                                 </div>
                                 
                             </div>

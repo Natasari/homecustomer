@@ -48,6 +48,7 @@
         <?php $this->load->view('header_admin')?>
         <?php $this->load->view('sidebar_admin')?>    
         <div id="page-wrapper">
+            
             <div class="row">
                 <div class="col-lg-12">
                     <h1 class="page-header">Profile</h1>
@@ -82,52 +83,51 @@
                         <div class="panel-body">
                             <div class="dataTable_wrapper">
                                 <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
-                                    <div class="row"><div class="col-sm-6"><div class="dataTables_length" id="dataTables-example_length">
-                                        <table>
-                                          <tr>
-                                            <td><label>Area</label></td>
-                                            <td>:</td>
-                                            <td>Area</td>
-                                          </tr>
-                                          <tr>
-                                            <td><label>Lokasi</label></td>
-                                            <td>:</td>
-                                            <td>Lokasi</td>
-                                          </tr>
-                                          <tr>
-                                            <td><label>Koordinat</label></td>
-                                            <td>:</td>
-                                            <td></td>
-                                          </tr>
-                                          <tr>
-                                            <td><label>Jumlah Rumah</label></td>
-                                            <td>:</td>
-                                            <td></td>
-                                          </tr>
-                                          <tr>
-                                            <td><label>Jumlah Blok</label></td>
-                                            <td>:</td>
-                                            <td></td>
-                                          </tr>
-                                          <tr>
-                                            <td><label>Jumlah Ruko</label></td>
-                                            <td padding="1">:</td>
-                                            <td></td>
-                                          </tr>
-                                          <tr>
-                                            <td><label>Jumlah Hunian</label></td>
-                                            <td>:</td>
-                                            <td></td>
-                                          </tr>
-                                        </table>
-                                        
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="dataTables_length" id="dataTables-example_length">
+                                            <table>
+                                              <tr>
+                                                <td><label>Area</label></td>
+                                                <td>:</td>
+                                                <td>Area</td>
+                                              </tr>
+                                              <tr>
+                                                <td><label>Lokasi</label></td>
+                                                <td>:</td>
+                                                <td>Lokasi</td>
+                                              </tr>
+                                              <tr>
+                                                <td><label>Koordinat</label></td>
+                                                <td>:</td>
+                                                <td></td>
+                                              </tr>
+                                              <tr>
+                                                <td><label>Jumlah Rumah</label></td>
+                                                <td>:</td>
+                                                <td></td>
+                                              </tr>
+                                              <tr>
+                                                <td><label>Jumlah Blok</label></td>
+                                                <td>:</td>
+                                                <td></td>
+                                              </tr>
+                                              <tr>
+                                                <td><label>Jumlah Ruko</label></td>
+                                                <td padding="1">:</td>
+                                                <td></td>
+                                              </tr>
+                                              <tr>
+                                                <td><label>Jumlah Hunian</label></td>
+                                                <td>:</td>
+                                                <td></td>
+                                              </tr>
+                                            </table>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                               
                             </div>
-                        </div>
-
-                           
                         </div>
                         <!-- /.panel-body -->
                     </div>
@@ -137,6 +137,61 @@
             </div>
             <!-- /.row -->
 
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Data Kompetitor
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="dataTable_wrapper">
+                                <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="dataTables_length" id="dataTables-example_length">
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            Data Demo Revenue Indohome
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                            <div class="dataTable_wrapper">
+                                <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="dataTables_length" id="dataTables-example_length">
+                                            
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
+            <!-- /.row -->
         </div>
         <!-- /#page-wrapper -->
 
