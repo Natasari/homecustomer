@@ -44,31 +44,39 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Data Teknik</h1>
+                    <h1 class="page-header">Profile</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
             <!-- /.row -->
+
+
+            <div class="panel-body">
+                <div class="dataTable_wrapper">
+                    <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
+                        
+                        <div class="row">
+                            <div id="dataTables-example_filter" class="dataTables_filter">
+                                <label style="float:left; margin-right:15px;"> Search Area:  
+                                    <input type="text" id="search" class="form-control input-sm" placeholder="" aria-controls="dataTables-example">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            DataTables Advanced Tables
+                            Keterangan
                         </div>
                         <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div class="dataTable_wrapper">
-                                <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
-                                	
-                                	<div class="row">
-                                        <div id="dataTables-example_filter" class="dataTables_filter">
-                                            <label style="float:right; margin-right:15px;"> Search Area:  
-                                                <input type="text" id="search" class="form-control input-sm" placeholder="" aria-controls="dataTables-example">
-                                            </label>
-                                        </div>
-                                    </div>
-                        
-            
+                    </div>
+                </div>
+            </div>
+
         </div>
         <!-- /#page-wrapper -->
 
