@@ -34,7 +34,6 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            List Admin
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -56,17 +55,30 @@
                                                 </label>
                                             </div>
                                         </div>
+
                                         <div class="col-sm-6">
                                             <div id="dataTables-example_filter" class="dataTables_filter">
-                                                <label style="margin-left:245px;">Search:
+                                                <label style="margin-left:325px;">Search:
                                                     <input type="search" class="form-control input-sm" placeholder="" aria-controls="dataTables-example">
                                                 </label>
                                             </div>
                                         </div>
                                     </div>
+                                    <br>
                                     <div class="row"><div class="col-sm-12"><table class="table table-striped table-bordered table-hover dataTable no-footer" id="dataTables-example" role="grid" aria-describedby="dataTables-example_info">
                                     <thead>
-                                        <tr role="row"><th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Username: activate to sort column descending" style="width: 170px;">Username</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Jabatan: activate to sort column ascending" style="width: 207px;">Jabatan</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="x: activate to sort column ascending" style="width: 188px;">x</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Edit: activate to sort column ascending" style="width: 147px;">Edit</th><th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Delete: activate to sort column ascending" style="width: 108px;">Delete</th></tr>
+                                        <tr role="row">
+                                            <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Username: activate to sort column descending" style="width: 170px;">
+                                                Username</th>
+                                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Jabatan: activate to sort column ascending" style="width: 207px;">
+                                                Jabatan</th>
+                                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="x: activate to sort column ascending" style="width: 188px;">
+                                                x</th>
+                                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Edit: activate to sort column ascending" style="width: 147px;">
+                                                Edit</th>
+                                            <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Delete: activate to sort column ascending" style="width: 108px;">
+                                                Delete</th>
+                                            </tr>
                                     </thead>
                                     <tbody>    
                                     <tr class="gradeA odd" role="row">
