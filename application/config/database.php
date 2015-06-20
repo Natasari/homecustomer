@@ -49,8 +49,8 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'home';
-$db['default']['password'] = 'home';
+$db['default']['username'] = 'rani';
+$db['default']['password'] = 'rani';
 $db['default']['database'] = 'home';
 $db['default']['dbdriver'] = 'oci8';
 $db['default']['dbprefix'] = '';

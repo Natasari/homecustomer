@@ -32,6 +32,23 @@
 				return 1;
 			}
 		}
+
+		public function info_user($username){
+			$this->load->database();
+			$query = $this->db->query("SELECT * FROM USERS WHERE USERS.USERNAME='$username'");
+			return $query->result_array();
+		}
+
+		public function update($data){
+			$username = $data['username'];
+			$password = $data['password'];
+			$oldusername = $_SESSION['username'];
+
+			$this->load->database();
+			$query = $this->db->query("UPDATE USERS SET USERS.USERNAME = '$username',  USERS.PASS = '$password' WHERE USERS.USERNAME = '$oldusername' ");
+			return $query;
+		}
 	}
+
 
 ?>

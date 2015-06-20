@@ -3,7 +3,7 @@ class admin extends CI_Controller {
 
 	public function index()
 	{
-
+		
 	}
 
 	public function home_admin(){
@@ -31,11 +31,11 @@ class admin extends CI_Controller {
 		session_start();
 		if (!isset($_SESSION['username'])) {
 			redirect('login');
-			//$this->load->view('login_view');
 			exit();
 		}
-		else
-		$this->load->view('tambah_admin');
+		else{
+			$this->load->view('tambah_admin');
+		}
 
 	}
 	public function insert()
@@ -50,10 +50,10 @@ class admin extends CI_Controller {
 			{
 				$username = $this->input->post('username');
 				$password = $this->input->post('password');
-				//echo $username;
-				//echo $password;
+				
 				$this->load->model('admin_model');
 				$cek = $this->admin_model->cekuser($username);
+
 				if($cek == 1){
 					echo '<script>alert("Please use another username");</script>';
 					$this->load->view('tambah_admin');
@@ -79,10 +79,73 @@ class admin extends CI_Controller {
 				$this->load->view('tambah_admin');
 			}	
 	}
+
+	public function update(){
+		$username = $this->input->post('username');
+		$this->load->model('admin_model');
+		$result = $this->admin_model->info_user($username);
+		session_start();
+		
+		$data = array(
+    		'USERNAME' => $result[0]['USERNAME'],
+    		'ID_USERS' => $result[0]['ID_USERS'],
+    		'PREV' => $result[0]['PREV']
+    	);
+		$this->load->view('update_admin', $data);
+	}
+
+	public function update_insert(){
+		session_start();
+		if($_SERVER['REQUEST_METHOD']== 'POST'){
+
+			$this->form_validation->set_rules('username', 'Username', 'required');
+			$this->form_validation->set_rules('password', 'Password', 'required');
+			$this->form_validation->set_rules('rpassword', 'Re-Type Password', 'required');
+			$this->form_validation->set_message('required', '%s must be filled');
+
+			$data = array(
+				'USERNAME' => $this->input->post('username')
+			);
+
+			if($this->form_validation->run() == TRUE){
+				$username = $this->input->post('username');
+				$password = $this->input->post('password');
+				$rpassword = $this->input->post('rpassword');
+				
+				//checking that password and retype match
+				$hash = password_hash($password, PASSWORD_DEFAULT);
+				if( (strcmp($password, $rpassword)) == 0){
+					$databaru = array (
+						'username' => $username,
+						'password' => $hash
+					);
+					$this->load->model('admin_model');
+					$result = $this->admin_model->update($databaru);
+
+					if($result == 1){
+						echo '<script>alert("Data berhasil disimpan");</script>';
+						redirect('admin/manage_admin');
+					}
+					else{
+						echo '<script>alert("Data gagal disimpan");</script>';
+						$this->load->view('update_admin', $data);		
+					}
+				}
+				else{
+					echo '<script>alert("Password dan Re-type password tidak sama");</script>';
+					$this->load->view('update_admin', $data);		
+				}
+			}else{
+				$this->load->view('update_admin', $data);
+			}	
+		}else {
+			show_404();
+		}
+	}
+
 	public function logout()
 	{	
 		session_start();
-		
 		unset($_SESSION['username']);
 		session_destroy();
 		//if no session variable then redirect the user

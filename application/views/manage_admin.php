@@ -16,6 +16,30 @@
     <link href="<?=base_url()?>assets/morrisjs/morris.css" rel="stylesheet">
     <link href="<?=base_url()?>assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 </head>
+<style type="text/css">
+.search{
+    float: left;
+}
+.top{
+    float: right;
+}
+.table{
+
+}
+.edit{
+    text-align: center;
+    width: 130px;
+}
+.editButton{
+    text-align: center;
+}
+
+.bottom{
+    float: right;
+}
+
+
+</style>
 
 <body>
 
@@ -25,9 +49,10 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Manage Admin</h1>  <label>
-                                                    <a href="<?=base_url()?>index.php/admin/tambah"><button type="button" class="btn btn-primary">Add User</button></a>
-                                                </label>
+                    <h1 class="page-header">Manage Admin</h1>  
+                            <a href="<?=base_url()?>index.php/admin/tambah">
+                                <button type="button" style="margin-bottom:15px;float:left;" class="btn btn-primary">Add User</button>
+                            </a>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -36,7 +61,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            DataTables Advanced Tables
+                            Tabel Daftar Admin
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -44,11 +69,9 @@
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>Rendering engine</th>
-                                            <th>Browser</th>
-                                            <th>Platform(s)</th>
-                                            <th>Engine version</th>
-                                            <th>CSS grade</th>
+                                            <th>User Admin</th>
+                                            <th>Previlidge</th>
+                                            <th class="edit">Edit</th>
                                         </tr>
                                     </thead>
                                     <?php
@@ -58,9 +81,12 @@
                                             <tr>
                                                 <td><?php echo $products->USERNAME; ?></td>
                                                 <td><?php echo $products->PREV; ?></td>
-                                                <td><?php echo 'terserah' ?></td>
-                                                <td><button type="button" class="btn btn-warning">Edit</button></td>
-                                                <td><button type="button" class="btn btn-danger">Delete</button></td>
+                                                <td class="editButton">
+                                                    <form action="<?=base_url()?>index.php/admin/update" method="post">
+                                                        <input type="hidden" name="username" value="<?php echo $products->USERNAME;?>">
+                                                        <button type="submit" class="btn btn-warning">Edit</button>
+                                                    </form>
+                                                </td>
                                             </tr>
                                         <?php
                                         }
@@ -100,7 +126,7 @@
     <script>
     $(document).ready(function() {
         $('#dataTables-example').DataTable({
-                responsive: true
+            "dom":' <"search"f><"top"l>rt<"bottom"ip><"clear">'
         });
     });
     </script>

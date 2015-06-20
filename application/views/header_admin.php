@@ -22,7 +22,7 @@
             </ul>
             <!-- /.navbar-top-links -->
             <div class="navbar-header" style="float:right;">
-                <a class="navbar-brand" href="<?=base_url()?>index.php/admin/home_admin">Welcome <?php echo $_SESSION['username'];?></a>
+                <a class="navbar-brand" href="<?=base_url()?>index.php/admin/home_admin"><i class="fa fa-home fa-fw"></i>Welcome <?php echo $_SESSION['username'];?></a>
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
