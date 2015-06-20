@@ -64,53 +64,38 @@
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
-                            <div class="dataTable_wrapper">
-                                <div id="dataTables-example_wrapper" class="dataTables_wrapper form-inline dt-bootstrap no-footer">
-                                    <div class="row">
-                                        <div class="col-sm-6">
-                                            <div class="dataTables_length" id="dataTables-example_length">
-                                            <table>
-                                              <tr>
-                                                <td><label>Area</label></td>
-                                                <td>:</td>
-                                                <td>Area</td>
-                                              </tr>
-                                              <tr>
-                                                <td><label>Lokasi</label></td>
-                                                <td>:</td>
-                                                <td>Lokasi</td>
-                                              </tr>
-                                              <tr>
-                                                <td><label>Koordinat</label></td>
-                                                <td>:</td>
-                                                <td></td>
-                                              </tr>
-                                              <tr>
-                                                <td><label>Jumlah Rumah</label></td>
-                                                <td>:</td>
-                                                <td></td>
-                                              </tr>
-                                              <tr>
-                                                <td><label>Jumlah Blok</label></td>
-                                                <td>:</td>
-                                                <td></td>
-                                              </tr>
-                                              <tr>
-                                                <td><label>Jumlah Ruko</label></td>
-                                                <td padding="1">:</td>
-                                                <td></td>
-                                              </tr>
-                                              <tr>
-                                                <td><label>Jumlah Hunian</label></td>
-                                                <td>:</td>
-                                                <td></td>
-                                              </tr>
-                                            </table>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th valign="midle" rowspan="2" text-align="middle">Area </th>
+                                            <th valign="midle" rowspan="2">Jumlah cluster</th>
+                                            <th valign="midle" rowspan="2">Jumlah bangunan</th>
+                                            <th colspan="3" style="center">Customer </th> 
+                                            <th colspan="3">Revenue </th>
+                                        </tr>
+                                            <tr>
+                                                <th>Wireline</th> <th>Internet</th> <th>Total</th>  
+                                                <th>Wireline</th> <th>Internet</th> <th>Total</th>  
+                                            </tr>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                       <tr>
+                                            <td>1</td>
+                                            <td>2</td>
+                                            <td>3</td>
+                                            <td>4</td>
+                                            <td>5</td>
+                                            <td>6</td>
+                                            <td>7</td>
+                                            <td>8</td>
+                                            <td>9</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
                             </div>
+                            <!-- /.table-responsive -->
                         </div>
                         <!-- /.panel-body -->
                     </div>
