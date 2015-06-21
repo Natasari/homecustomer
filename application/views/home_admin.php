@@ -43,7 +43,7 @@
                                 <div class="form-group">
                                     <label>Selects</label>
                                     <form id="myform" role="form" method="post" action="<?php echo site_url('admin/home_admin')?>">
-                                        <select name="waktu" class="form-control" style="width:30%;">
+                                        <select name="waktu" id="waktu" class="form-control" style="width:30%;">
                                             <?php 
                                             $awal = 2014;
                                             $tahun = date('Y');
@@ -55,7 +55,7 @@
                                             }
                                             ?>
                                         </select>
-                                        <select name="terms" class="form-control" style="width:30%;margin-top:10px;">
+                                        <select id="terms" name="terms" class="form-control" style="width:30%;margin-top:10px;">
                                             <option value="all">All</option>
                                             <option value="PL">PERSONAL LINE</option>
                                             <option value="BL">BUSSINESS LINE</option>
@@ -159,6 +159,10 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="<?=base_url()?>assets/js/sb-admin-2.js"></script>
+    <script type="text/javascript">
+        document.getElementById('waktu').value = "<?php echo $_POST['waktu'];?>";
+        document.getElementById('terms').value = "<?php echo $_POST['terms'];?>";
+    </script>
 
 </body>
 
