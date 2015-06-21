@@ -65,7 +65,7 @@
                                     <form role="form" method="post" action="<?php echo site_url('admin/update_insert') ?>">
                                         <div class="form-group">
                                             <label>Username</label>
-                                            <input class="form-control" id="disabledInput" type="hidden" name="username" placeholder="Username" value="<?php echo $USERNAME;?>">
+                                            <input class="form-control" id="disabledInput" type="hidden" name="username"value="<?php echo $USERNAME;?>">
                                             <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input" disabled value="<?php echo $USERNAME;?>">
                                         </div>
                                         <div class="form-group">

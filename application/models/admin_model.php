@@ -15,7 +15,7 @@
 
 		public function insert_user($username,$password) {
 				$this->load->database(); 
-				$result = $this->db->query("INSERT INTO USERS (USERS.USERNaME, USERS.PASS, USERS.PREV) VALUES ('$username','$password', 'A')");
+				$result = $this->db->query("INSERT INTO USERS (USERS.USERNAME, USERS.PASS, USERS.PREV) VALUES ('$username','$password', 'A')");
 				return $result;
 		}
 
@@ -28,7 +28,8 @@
 		public function cekuser($username){
 			$this->load->database();
 			$query = $this->db->query("SELECT USERS.USERNAME FROM USERS WHERE USERS.USERNAME='$username'");
-			if(count($query) > 0){
+			
+			if(count($query->result_array) > 0){
 				return 1;
 			}
 		}
@@ -48,6 +49,24 @@
 			$query = $this->db->query("UPDATE USERS SET USERS.USERNAME = '$username',  USERS.PASS = '$password' WHERE USERS.USERNAME = '$oldusername' ");
 			return $query;
 		}
+
+		public function homedata($tahunbulan, $terms){
+			$this->load->database();
+			$tabelBulanini = "dossier_datek_sda_" . $tahunbulan;
+
+			if(strcmp($terms, 'all') == 0){
+				$query = $this->db->query("SELECT KOTA, COUNT(DISTINCT JALAN) AS JML_CLUSTER FROM $tabelBulanini GROUP BY KOTA");
+				return ($query->result_array());
+			}
+			else{
+				$query = $this->db->query( "SELECT DISTINCT KOTA, COUNT(DISTINCT JALAN) AS JML_CLUSTER 
+											FROM DOSSIER_DATEK_SDA_201506 DAT, DOSSIER_REV_SDA_201506 REV
+											WHERE DAT.NCLI = REV.NCLI AND REV.PLBLCL_TREMS='$terms'
+											GROUP BY KOTA");
+				return($query->result_array());
+			}			
+		}
+
 	}
 
 

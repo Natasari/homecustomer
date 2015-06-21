@@ -38,16 +38,18 @@
                         <div class="panel-body">
                             <div class="row">
                                 <div style="width:100%;" class="col-lg-10">
-                                    <form role="form" method="post" action="<?php echo site_url('admin/insert') ?>">
+                                    <form id="myform" role="form" method="post" action="<?php echo site_url('admin/insert') ?>">
                                         <div class="form-group">
                                             <label>Username</label>
-                                            <input class="form-control" name="username" placeholder="Username" value="<?php echo set_value('username');?>">
+                                            <input class="form-control" id="username" name="username" placeholder="Username" value="<?php echo set_value('username');?>">
                                         </div>
+                                        <div class="kotak"><?php echo form_error('username'); ?></div>
                                         <div class="form-group">
                                             <label>Password</label>
-                                            <input class="form-control" type="password" name="password" placeholder="Password" value="<?php echo set_value('password');?>">
+                                            <input class="form-control" type="password" id="password" name="password" placeholder="Password" value="<?php echo set_value('password');?>">
                                         </div>
-                                        <button type="submit" style="float:right;" class="btn btn-default">Submit</button>
+                                        <div class="kotak"><?php echo form_error('password'); ?></div>
+                                        <button type="submit" style="float:right;" class="btn btn-default" onClick="clearform();">Submit</button>
                                     </form>
                                 </div>
                                 <!-- /.col-lg-6 (nested) -->
@@ -83,7 +85,7 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="<?=base_url()?>assets/js/sb-admin-2.js"></script>
-
+    
 </body>
 
 </html>

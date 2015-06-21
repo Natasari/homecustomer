@@ -12,9 +12,58 @@ class admin extends CI_Controller {
 			redirect('login');
 			exit();
 		}
-		else
-		$this->load->view('home_admin');
+		else{
+			//if the home_admin load in the first time
+			if(empty($_POST['waktu'])){
+				$tahunbulan = date('Ym');
+				$terms = 'all';
+			}
+			//if the user choose the filter
+			else {
+				$string = $this->input->post('waktu');
+				$waktu = explode(" ", $string);
+				$bulan = $waktu[0];
+				$tahun = $waktu[1];
+				$tahunbulan = $tahun.'0'.$bulan;
+				$terms = $this->input->post('terms');
+			}
+
+			$sekarang = date('Ym');
+			
+			//check the time that choosen by admin
+			if($tahunbulan == $sekarang || $tahunbulan < $sekarang){
+				$this->load->model('admin_model');	
+				$result = $this->admin_model->homedata($tahunbulan, $terms);
+				if($result == NULL){
+					$data = array(
+					'jombang' => '0',
+					'mojokerto' => '0',
+					'pasuruan' => '0',
+					'sidoarjo' => '0'
+					);
+				}
+				else{
+					$data = array(
+					'jombang' => $result[0]['JML_CLUSTER'],
+					'mojokerto' => $result[1]['JML_CLUSTER'],
+					'pasuruan' => $result[2]['JML_CLUSTER'],
+					'sidoarjo' => $result[3]['JML_CLUSTER']
+					);	
+				}
+				
+				$this->load->view('home_admin', $data);	
+			}
+			elseif($tahunbulan > $sekarang){
+				echo '<script type="text/javascript">'; 
+				echo 'alert("Data Belum Ada");';
+				echo '</script>';
+				redirect('/admin/home_admin', 'refresh');
+			}
+
+		}
 	}
+
+	
 	public function manage_admin(){
 		session_start();
 		if (!isset($_SESSION['username'])) {
@@ -58,33 +107,38 @@ class admin extends CI_Controller {
 					echo '<script>alert("Please use another username");</script>';
 					$this->load->view('tambah_admin');
 				}
-				else{
+				else
+				{
 					$this->load->model('admin_model');
 					$hash = password_hash($password, PASSWORD_DEFAULT);
 					
 					$result = $this->admin_model->insert_user($username, $hash);
+
 					if($result == 1){
-						echo '<script>alert("New admin success added");</script>';
+						//
+						//echo '<script>alert("New admin success added");</script>';
+
+						echo '<script type="text/javascript">'; 
+						echo 'alert("New admin success added");';
+						echo '</script>';
+						redirect('/admin/tambah', 'refresh');
 					}
 				}
-				$result = $this->admin_model->insert_user($username, $password);
-
 			}
 			else{
 					$this->load->view('tambah_admin');
-					echo '<script>alert("username and password must be filled");</script>'; 
 				}
 		}
 		else{
 				$this->load->view('tambah_admin');
-			}	
+		}	
 	}
 
 	public function update(){
+		session_start();
 		$username = $this->input->post('username');
 		$this->load->model('admin_model');
 		$result = $this->admin_model->info_user($username);
-		session_start();
 		
 		$data = array(
     		'USERNAME' => $result[0]['USERNAME'],
@@ -95,6 +149,7 @@ class admin extends CI_Controller {
 	}
 
 	public function update_insert(){
+		
 		session_start();
 		if($_SERVER['REQUEST_METHOD']== 'POST'){
 
@@ -124,7 +179,7 @@ class admin extends CI_Controller {
 
 					if($result == 1){
 						echo '<script>alert("Data berhasil disimpan");</script>';
-						redirect('admin/manage_admin');
+						redirect('/admin/manage_admin', 'refresh');
 					}
 					else{
 						echo '<script>alert("Data gagal disimpan");</script>';

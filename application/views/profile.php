@@ -65,14 +65,14 @@
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <div class="table-responsive">
-                                <table class="table table-striped table-bordered table-hover">
+                                <table style="text-align:center;" class="table table-striped table-bordered table-hover">
                                     <thead>
                                         <tr>
-                                            <th valign="midle" rowspan="2" text-align="middle">Area </th>
-                                            <th valign="midle" rowspan="2">Jumlah cluster</th>
-                                            <th valign="midle" rowspan="2">Jumlah bangunan</th>
-                                            <th colspan="3" style="center">Customer </th> 
-                                            <th colspan="3">Revenue </th>
+                                            <th style="text-align:center;" rowspan="2" text-align="middle">Area </th>
+                                            <th style="text-align:center;" rowspan="2">Jumlah cluster</th>
+                                            <th style="text-align:center;" rowspan="2">Jumlah bangunan</th>
+                                            <th colspan="3" style="text-align:center;">Customer </th> 
+                                            <th colspan="3" style="text-align:center;">Revenue </th>
                                         </tr>
                                             <tr>
                                                 <th>Wireline</th> <th>Internet</th> <th>Total</th>  
