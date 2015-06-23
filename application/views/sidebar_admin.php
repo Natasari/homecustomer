@@ -66,6 +66,15 @@
                             </ul>
                             <!-- /.nav-second-level -->
                         </li>
+                         <li>
+                            <a href="#"><i class="fa fa-th-list fa-fw"></i> Standarisasi<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="<?=base_url()?>index.php/admin/standarisasi">Standarisasi Alamat</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->
@@ -73,3 +82,4 @@
             <!-- /.navbar-static-side -->
 
         </nav>
+

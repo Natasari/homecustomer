@@ -45,7 +45,7 @@
                                     <form id="myform" role="form" method="post" action="<?php echo site_url('admin/home_admin')?>">
                                         <select name="waktu" id="waktu" class="form-control" style="width:30%;">
                                             <?php 
-                                            $awal = 2014;
+                                            $awal = 2015;
                                             $tahun = date('Y');
                                             for($a=0; $a<=($tahun-$awal); $a++){
                                                 $awal = $awal + $a;
@@ -81,50 +81,24 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                       <tr>
-                                            <td>Sidoarjo</td>
-                                            <td><?php echo $sidoarjo?></td>
-                                            <td>3</td>
-                                            <td>4</td>
-                                            <td>5</td>
-                                            <td>6</td>
-                                            <td>7</td>
-                                            <td>8</td>
-                                            <td>9</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Mojokerto</td>
-                                            <td><?php echo $mojokerto?></td>
-                                            <td>3</td>
-                                            <td>4</td>
-                                            <td>5</td>
-                                            <td>6</td>
-                                            <td>7</td>
-                                            <td>8</td>
-                                            <td>9</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jombang</td>
-                                            <td><?php echo $jombang?></td>
-                                            <td>3</td>
-                                            <td>4</td>
-                                            <td>5</td>
-                                            <td>6</td>
-                                            <td>7</td>
-                                            <td>8</td>
-                                            <td>9</td>
-                                        </tr>
-                                        <tr>
-                                            <td>Pandaan</td>
-                                            <td><?php echo $pasuruan?></td>
-                                            <td>3</td>
-                                            <td>4</td>
-                                            <td>5</td>
-                                            <td>6</td>
-                                            <td>7</td>
-                                            <td>8</td>
-                                            <td>9</td>
-                                        </tr>
+                                        <?php
+                                       foreach ($hasilcluster as $products)
+                                        {
+                                        ?>
+                                            <tr>
+                                                <td><?php echo $products->KANDATEL; ?></td>
+                                                <td><?php echo $products->JUMLAH; ?></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                                        <?php
+                                        }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>

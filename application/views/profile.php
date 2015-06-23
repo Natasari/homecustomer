@@ -56,54 +56,7 @@
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            Keterangan
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div class="table-responsive">
-                                <table style="text-align:center;" class="table table-striped table-bordered table-hover">
-                                    <thead>
-                                        <tr>
-                                            <th style="text-align:center;" rowspan="2" text-align="middle">Area </th>
-                                            <th style="text-align:center;" rowspan="2">Jumlah cluster</th>
-                                            <th style="text-align:center;" rowspan="2">Jumlah bangunan</th>
-                                            <th colspan="3" style="text-align:center;">Customer </th> 
-                                            <th colspan="3" style="text-align:center;">Revenue </th>
-                                        </tr>
-                                            <tr>
-                                                <th>Wireline</th> <th>Internet</th> <th>Total</th>  
-                                                <th>Wireline</th> <th>Internet</th> <th>Total</th>  
-                                            </tr>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                       <tr>
-                                            <td>1</td>
-                                            <td>2</td>
-                                            <td>3</td>
-                                            <td>4</td>
-                                            <td>5</td>
-                                            <td>6</td>
-                                            <td>7</td>
-                                            <td>8</td>
-                                            <td>9</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <!-- /.table-responsive -->
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
-            <!-- /.row -->
+            
 
             <div class="row">
                 <div class="col-lg-12">

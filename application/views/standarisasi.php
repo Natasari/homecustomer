@@ -19,9 +19,13 @@
 <style type="text/css">
 .search{
     float: left;
+    margin-top: 20px;
+    margin-bottom: 5px;
 }
 .top{
     float: right;
+    margin-top: 20px;
+    margin-bottom: 5px;
 }
 .table{
 
@@ -49,10 +53,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Manage Admin</h1>  
-                            <a href="<?=base_url()?>index.php/admin/tambah">
-                                <button type="button" style="margin-bottom:15px;float:left;" class="btn btn-primary">Add User</button>
-                            </a>
+                    <h1 class="page-header">Standarisasi Alamat</h1>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -61,30 +62,65 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            Tabel Daftar Admin
+                            Tabel Daftar Alamat
                         </div>
                         <!-- /.panel-heading -->
+
                         <div class="panel-body">
+                            <div class="form-group">
+                                    <label>Selects</label>
+                                    <form id="myform" role="form" method="post" action="<?php echo site_url('admin/Standarisasi')?>">
+                                        <div style="float:left;width:24%;">
+                                            <select name="waktu" id="waktu" class="form-control" style=";">
+                                            <?php 
+                                            $awal = 2014;
+                                            $tahun = date('Y');
+                                            for($a=0; $a<=($tahun-$awal); $a++){
+                                                $awal = $awal + $a;
+                                                for ($m=1; $m<=12; $m++) { 
+                                                        echo '  <option value="' . $m .' '. $awal.' " if($sel_mnth == $m) echo "selected=\'selected\'";>' . date('M', mktime(0,0,0,$m)) . ' '. $awal . '</option>' . PHP_EOL;
+                                                }
+                                            }
+                                            ?>
+                                            </select>
+                                        </div>
+                                        <div style="float:left;">
+                                            <button type="submit" style="float:left;margin-left:15px" class="btn btn-primary">Show</button>
+                                        </div>
+                                    </form>
+                                </div>
                             <div class="dataTable_wrapper">
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>User Admin</th>
-                                            <th>Previlidge</th>
+                                            <th>NCLI</th>
+                                            <th>Nama</th>
+                                            <th>Jalan</th>
+                                            <th>No</th>
+                                            <th>Kelurahan</th>
+                                            <th>Kota</th>
                                             <th class="edit">Edit</th>
                                         </tr>
                                     </thead>
                                     <?php
-                                    print_r($listuser);
                                         foreach ($listuser as $products)
                                         {
                                         ?>
                                             <tr>
-                                                <td><?php echo $products->USERNAME; ?></td>
-                                                <td><?php echo $products->PREV; ?></td>
+                                                <td><?php echo $products->NCLI; ?></td>
+                                                <td><?php echo $products->NAMA; ?></td>
+                                                <td><?php echo $products->JALAN; ?></td>
+                                                <td><?php echo $products->NO_JALAN; ?></td>
+                                                <td><?php echo $products->KELURAHAN; ?></td>
+                                                <td><?php echo $products->KOTA; ?></td>
                                                 <td class="editButton">
-                                                    <form action="<?=base_url()?>index.php/admin/update" method="post">
-                                                        <input type="hidden" name="username" value="<?php echo $products->USERNAME;?>">
+                                                    <form action="<?=base_url()?>index.php/admin/update_standarisasi" method="post">
+                                                        <input type="hidden" name="ncli" value="<?php echo $products->NCLI;?>">
+                                                        <input type="hidden" name="nama" value="<?php echo $products->NAMA;?>">
+                                                        <input type="hidden" name="jalan" value="<?php echo $products->JALAN;?>">
+                                                        <input type="hidden" name="no_jalan" value="<?php echo $products->NO_JALAN;?>">
+                                                        <input type="hidden" name="kelurahan" value="<?php echo $products->KELURAHAN;?>">
+                                                        <input type="hidden" name="kota" value="<?php echo $products->KOTA;?>">
                                                         <button type="submit" class="btn btn-warning">Edit</button>
                                                     </form>
                                                 </td>
